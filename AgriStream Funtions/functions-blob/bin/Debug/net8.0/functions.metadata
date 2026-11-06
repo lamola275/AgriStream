@@ -1,0 +1,23 @@
+[
+  {
+    "name": "DroneImageProcessor",
+    "scriptFile": "BlobTriggeredFunction.dll",
+    "entryPoint": "AgriStream.Functions.DroneImageProcessor.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "image",
+        "direction": "In",
+        "type": "blobTrigger",
+        "path": "drone-images/{name}",
+        "connection": "BlobConnectionString",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  }
+]

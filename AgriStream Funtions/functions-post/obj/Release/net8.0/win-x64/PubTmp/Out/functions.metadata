@@ -1,0 +1,29 @@
+[
+  {
+    "name": "TriggerIrrigation",
+    "scriptFile": "HTTPTriggeredFunctionPOST.dll",
+    "entryPoint": "AgriStream.Functions.TriggerIrrigation.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "post"
+        ],
+        "route": "irrigate",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  }
+]

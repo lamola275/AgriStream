@@ -1,0 +1,28 @@
+@* Shared page layout - plain farm-green styling *@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AgriStream IoT</title>
+    <style>
+        body  { font-family: Arial; margin: 0; background: #f4f7f0; }
+        .bar  { background: #2d6a2d; color: white; padding: 14px 24px; }
+        .bar h1 { margin: 0; font-size: 22px; }
+        .page { margin: 24px; }
+        .card { background: white; border: 1px solid #ccc; border-radius: 8px;
+                padding: 20px; margin-bottom: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        td, th { border: 1px solid #bbb; padding: 8px 12px; text-align: left; }
+        th { background: #2d6a2d; color: white; }
+        input, button { padding: 8px; margin: 4px 0; }
+        button { background: #2d6a2d; color: white; border: none;
+                 border-radius: 4px; cursor: pointer; }
+        .msg { background: #e2f3e2; border: 1px solid #2d6a2d;
+               padding: 10px; border-radius: 4px; }
+        .err { color: #b00020; }
+    </style>
+</head>
+<body>
+    <div class="bar"><h1>AgriStream IoT - Smart Farm Monitoring</h1></div>
+    <div class="page">@RenderBody()</div>
+</body>
+</html>

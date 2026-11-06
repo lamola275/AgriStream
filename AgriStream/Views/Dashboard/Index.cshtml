@@ -1,0 +1,57 @@
+@model AgriStream.Models.DashboardViewModel
+@{ Layout = "_Layout"; }
+
+<p>Logged in as <strong>@Model.Username</strong> (@Model.Role)
+   &nbsp;|&nbsp; <a href="/Account/Logout">Log out</a></p>
+
+@if (TempData["Message"] != null)
+{
+    <p class="msg">@TempData["Message"]</p>
+}
+@if (ViewBag.Error != null)
+{
+    <p class="err">@ViewBag.Error</p>
+}
+
+@* ---- SECTION 1: live telemetry (data comes from the HTTP GET function) ---- *@
+<div class="card">
+    <h2>Latest Sensor Telemetry</h2>
+    <p><small>Retrieved from Azure Table Storage via the GetLatestTelemetry function.</small></p>
+    <table>
+        <tr><th>Device</th><th>Sensor</th><th>Value</th><th>Time (UTC)</th></tr>
+        @foreach (var r in Model.Readings)
+        {
+            <tr><td>@r.DeviceId</td><td>@r.Sensor</td><td>@r.Value</td><td>@r.Time</td></tr>
+        }
+    </table>
+    <form method="get" action="/Dashboard/Index" style="margin-top:10px;">
+        <button type="submit">Refresh</button>
+    </form>
+</div>
+
+@* ---- SECTION 2: drone image upload (goes to Blob Storage) ---- *@
+<div class="card">
+    <h2>Upload Drone Image</h2>
+    <p><small>Saved to Blob Storage - the DroneImageProcessor function audits it automatically.</small></p>
+    <form method="post" action="/Dashboard/UploadImage" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required />
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+@* ---- SECTION 3: trigger irrigation (queues a command via the POST function) ---- *@
+<div class="card">
+    <h2>Irrigation Control</h2>
+    <p><small>Calls the TriggerIrrigation function, which queues a command.
+       The Queue function then updates the device status in Azure SQL.</small></p>
+    <form method="post" action="/Dashboard/Irrigate">
+        <label>Pump:
+            <select name="deviceId">
+                <option>pump-01</option>
+                <option>pump-02</option>
+                <option>pump-03</option>
+            </select>
+        </label>
+        <button type="submit">Trigger Irrigation</button>
+    </form>
+</div>

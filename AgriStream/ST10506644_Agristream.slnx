@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="../AgriStream Functions/AgriStream Funtions/functions-blob/BlobTriggeredFunction.csproj" />
+  <Project Path="../AgriStream Functions/AgriStream Funtions/functions-get/HTTPTriggeredFunctionGET.csproj" />
+  <Project Path="../AgriStream Functions/AgriStream Funtions/functions-post/HTTPTriggeredFunctionPOST.csproj" />
+  <Project Path="../AgriStream Functions/AgriStream Funtions/functions-queue/QueueTriggeredFunction.csproj" />
+  <Project Path="ST10506644_Agristream.csproj" />
+</Solution>

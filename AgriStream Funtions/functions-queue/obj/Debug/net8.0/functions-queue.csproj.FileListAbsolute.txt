@@ -1,0 +1,5 @@
+C:\Users\Administrator\Downloads\agristream-kit-4apps\agristream-kit-4apps\functions-queue\obj\Debug\net8.0\functions-queue.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\agristream-kit-4apps\agristream-kit-4apps\functions-queue\obj\Debug\net8.0\functions-queue.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Downloads\agristream-kit-4apps\agristream-kit-4apps\functions-queue\obj\Debug\net8.0\functions-queue.AssemblyInfoInputs.cache
+C:\Users\Administrator\Downloads\agristream-kit-4apps\agristream-kit-4apps\functions-queue\obj\Debug\net8.0\functions-queue.AssemblyInfo.cs
+C:\Users\Administrator\Downloads\agristream-kit-4apps\agristream-kit-4apps\functions-queue\obj\Debug\net8.0\functions-queue.csproj.CoreCompileInputs.cache

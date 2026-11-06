@@ -1,0 +1,22 @@
+@{ Layout = "_Layout"; }
+
+<div class="card" style="max-width: 420px;">
+    <h2>Sign in</h2>
+
+    @if (ViewBag.Error != null)
+    {
+        <p class="err">@ViewBag.Error</p>
+    }
+
+    <form method="post" action="/Account/Login">
+        <form method="post" action="/Account/Login">
+            <input name="username" />
+            <input name="password" type="password" />
+            <button type="submit">Log in</button>
+        </form>
+    </form>
+
+    <p><small>Demo users (from the Users table in Azure SQL):<br />
+        farmer1 / password123 &nbsp;•&nbsp; agronomist1 / password123 &nbsp;•&nbsp; admin1 / password123
+    </small></p>
+</div>

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "ProcessIrrigationCommand",
+    "scriptFile": "QueueTriggeredFunction.dll",
+    "entryPoint": "AgriStream.Functions.ProcessIrrigationCommand.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "queueTrigger",
+        "dataType": "String",
+        "queueName": "irrigation-commands",
+        "connection": "TableConnectionString",
+        "properties": {}
+      }
+    ]
+  }
+]
